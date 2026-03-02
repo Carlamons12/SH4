@@ -1,0 +1,221 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== FONDO GENERAL ===== */
+body {
+  background: linear-gradient(135deg, #0b132b, #020617 70%);
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+/* ===== TITULO ===== */
+h1 {
+  font-size: 38px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #38bdf8, #22c55e, #a78bfa);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: rgba(2, 6, 23, 0.9);
+  border-radius: 28px;
+  padding: 35px 40px;
+  margin-bottom: 35px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== SUBTITULOS ===== */
+.card h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+/* ===== FORMULARIO EN GRID BONITO ===== */
+#formCursos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 25px;
+}
+
+/* INPUTS OCUPAN 2 COLUMNAS CUANDO SEA NECESARIO */
+#formCursos .row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#formCursos .row:nth-child(1),
+#formCursos .row:nth-child(2) {
+  grid-column: span 2;
+}
+
+/* ===== LABELS ===== */
+label {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ===== INPUTS ===== */
+input,
+select {
+  padding: 15px 16px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  background: #020617;
+  color: #e2e8f0;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.25);
+}
+
+input::placeholder {
+  color: #64748b;
+}
+
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 2px #38bdf8;
+  transform: scale(1.02);
+}
+
+/* ===== BOTON REGISTRAR ===== */
+#btnRegistrar {
+  grid-column: span 2;
+  margin-top: 10px;
+  padding: 16px;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+#btnRegistrar:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(34, 197, 94, 0.4);
+}
+
+/* ===== TABLA ===== */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+thead th {
+  text-align: left;
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+tbody tr {
+  background: #020617;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.15);
+}
+
+tbody td {
+  padding: 14px 12px;
+}
+
+/* INPUTS DE LA TABLA */
+tbody input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #e2e8f0;
+  font-size: 14px;
+  outline: none;
+}
+
+/* ===== BOTONES ACCIONES ===== */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn.editar {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: white;
+}
+
+.btn.editar:hover {
+  transform: scale(1.05);
+}
+
+.btn.eliminar {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: white;
+}
+
+.btn.eliminar:hover {
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #formCursos {
+    grid-template-columns: 1fr;
+  }
+
+  #btnRegistrar {
+    grid-column: span 1;
+  }
+}
+
+/* ===== BOTON VOLVER ===== */
+.btn-volver {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #334155, #1e293b);
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.btn-volver:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 10px 25px rgba(100, 116, 139, 0.35);
+}

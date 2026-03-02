@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link href="styles/login.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+  <div class="card p-4">
+    <h3>Iniciar Sesión</h3>
+    <input id="correo" class="form-control mb-2" placeholder="Correo">
+    <input id="password" type="password" class="form-control mb-3" placeholder="Contraseña">
+    <button onclick="login()" class="btn btn-primary">Entrar</button>
+    <a href="index.html" class="btn-volver">Volver</a>
+
+  </div>
+</div>
+
+<script>
+async function login(){
+  const correo = document.getElementById('correo').value;
+  const password = document.getElementById('password').value;
+
+  const r = await fetch('/api/usuarios/login',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({correo,password})
+  });
+
+  const data = await r.json();
+
+if (data.ok) {
+  localStorage.setItem('usuario', JSON.stringify(data.usuario));
+
+  if (data.usuario.rol === 'admin') {
+    window.location.href = 'adminIndex.html';
+  } else {
+    window.location.href = 'usuarioIndex.html';
+  }
+}
+}
+</script>
+</body>
+</html>

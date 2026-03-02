@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Administrador</title>
+  <link rel="stylesheet" href="styles/dashboard.css" />
+  
+</head>
+<body>
+
+<script>
+const user = JSON.parse(localStorage.getItem('usuario'));
+if(!user || user.rol !== 'admin'){
+  alert('Acceso solo para administradores');
+  location.href = 'index.html';
+}
+</script>
+
+<main class="container">
+    <a href="adminIndex.html" class="btn-volver">Volver</a>
+  <h1>Registro de cursos (Administrador)</h1>
+
+  <section class="card">
+    <h2>Crear curso</h2>
+
+    <!-- 🔥 FORM CORREGIDO -->
+    <form id="formCursos">
+      <div class="row">
+        <label>Nombre del curso</label>
+        <input id="nombre" name="nombre" type="text" required />
+      </div>
+
+      <div class="row">
+        <label>Nombre del instructor</label>
+        <input id="instructor" name="instructor" type="text" required />
+      </div>
+
+      <div class="row">
+        <label>Número de horas</label>
+        <input id="horas" name="horas" type="number" required />
+      </div>
+
+      <div class="row">
+        <label>Nivel</label>
+        <select id="nivel" name="nivel" required>
+          <option value="">Seleccionar nivel</option>
+          <option value="basico">Básico</option>
+          <option value="intermedio">Intermedio</option>
+          <option value="avanzado">Avanzado</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Costo del curso</label>
+        <input id="costo" name="costo" type="number" required />
+      </div>
+
+      <div class="row">
+        <label>Fecha de inicio</label>
+        <input id="fecha" name="fecha" type="date" required />
+      </div>
+
+      <button type="submit" id="btnRegistrar">Registrar</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Cursos registrados</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre del curso</th>
+          <th>Nombre del instructor</th>
+          <th>Horas</th>
+          <th>Nivel</th>
+          <th>Fecha de inicio</th>
+          <th>Costo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaCursos"></tbody>
+    </table>
+  </section>
+</main>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+toastr.options = {
+  closeButton: true,
+  progressBar: true,
+  positionClass: "toast-top-right",
+  timeOut: "3000"
+};
+</script>
+
+<script src="main.js"></script>
+</body>
+</html>

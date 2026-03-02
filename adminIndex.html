@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Administrador</title>
+  <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+
+<script>
+const user = JSON.parse(localStorage.getItem('usuario'));
+if(!user || user.rol !== 'admin'){
+  alert('Acceso solo para administradores');
+  location.href = 'index.html';
+}
+</script>
+
+<nav class="navbar">
+  <h2>Mi Plataforma</h2>
+
+  <div class="nav-right">
+    <span id="nombreUsuario"></span>
+    <button onclick="irRegistrar()">Registrar Cursos</button>
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
+  </div>
+</nav>
+  <h2>Cursos registrados</h2>
+  <div id="listaCursos"></div>
+</main>
+
+<script src="adminIndex.js"></script>
+</body>
+</html>

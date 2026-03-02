@@ -1,0 +1,128 @@
+/* ===== RESET GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== FONDO GENERAL (MISMO ESTILO DE LA APP) ===== */
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1e3a8a, #020617 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e2e8f0;
+}
+
+/* ===== CONTENEDOR CENTRAL ===== */
+.container {
+  width: 100%;
+  max-width: 460px;
+  padding: 20px;
+}
+
+/* ===== TARJETA PRINCIPAL ===== */
+.card {
+  background: rgba(2, 6, 23, 0.92);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+  padding: 45px 38px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  box-shadow: 0 35px 75px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  animation: fadeIn 0.7s ease;
+}
+
+/* ===== TITULO ===== */
+.card h3 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e, #a78bfa);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== INPUTS Y SELECT ===== */
+.card input,
+.card select {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: none;
+  outline: none;
+  background: #020617;
+  color: #e2e8f0;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.25);
+}
+
+.card input::placeholder {
+  color: #94a3b8;
+}
+
+.card input:focus,
+.card select:focus {
+  box-shadow: 0 0 0 2px #38bdf8;
+  transform: scale(1.02);
+}
+
+/* ===== BOTON REGISTRAR ===== */
+.btn-success {
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 18px 45px rgba(34, 197, 94, 0.45);
+}
+
+/* ===== BOTON VOLVER ===== */
+.btn-volver {
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+  padding: 13px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  background: linear-gradient(135deg, #334155, #1e293b);
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  transition: all 0.25s ease;
+}
+
+.btn-volver:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(100, 116, 139, 0.35);
+}
+
+/* ===== ANIMACION SUAVE ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(45px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
